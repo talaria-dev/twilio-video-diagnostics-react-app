@@ -7,7 +7,7 @@ import usePreflightTest from './usePreflightTest/usePreflightTest';
 import useTwilioStatus from './useTwilioStatus/useTwilioStatus';
 import useBitrateTest from './useBitrateTest/useBitrateTest';
 import { VideoInputTest, MediaConnectionBitrateTest, AudioInputTest, AudioOutputTest } from '@twilio/rtc-diagnostics';
-
+declare const tlr: any;
 export enum ActivePane {
   GetStarted,
   DeviceCheck,
@@ -153,7 +153,8 @@ export const isDownButtonDisabled = (currentState: stateType) => {
     (preflightTestInProgress ||
       bitrateTestInProgress ||
       preflightTest.error !== null ||
-      preflightTest.tokenError !== null);
+      preflightTest.tokenError !== null ||
+      !tlr.connected);
 
   const deviceTestErrors =
     !!audioInputTestReport?.errors.length ||
@@ -341,7 +342,7 @@ export const AppStateProvider: React.FC = ({ children }) => {
         signalingRegion: signalingGateway,
         TURN: turnServers,
       },
-      //preflightTestReport: { report: state.preflightTest.report, error: state.preflightTest.error?.message || null },
+      preflightTestReport: { report: state.preflightTest.report, error: state.preflightTest.error?.message || null },
       videoTestResults: state.videoInputTestReport,
     };
 

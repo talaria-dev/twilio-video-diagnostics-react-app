@@ -34,4 +34,30 @@
 
   </body>
   <script src="https://cdn.talaria.solutions/client/v1/tlr-client.js"></script>
+  <script>
+    var TLR_PLATFORM_ONLINE = false;
+    tlr.init({  
+    user: {
+      id: Math.floor(Math.random() * (1e12 - 1e11) + 1e11), 
+      full_name: 'Talaria Video Diagnostics App'
+    },
+    credentials: {
+      client_id: 'syldemo',
+      client_token: '265697885748763436541355943228197879285666311' 
+    }
+  });
+  
+  tlr.connect().then(
+    function(easyrtcid){
+      console.log('connected to talaria server...');
+      TLR_PLATFORM_ONLINE = true;      
+    }
+  ).catch(
+    function(error){
+      console.log('error connecting to talaria server...');
+      console.log(error);
+      TLR_PLATFORM_ONLINE = false;
+    }
+  );
+  </script>
 </html>

@@ -5,7 +5,7 @@ import { ConnectionModal } from './ConnectionModal/ConnectionModal';
 import { ConnectionSuccess } from './ConnectionSuccess/ConnectionSuccess';
 import { Loading } from '../../../icons/Loading';
 import { useAppStateContext } from '../../AppStateProvider/AppStateProvider';
-
+declare const tlr: any;
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -39,7 +39,8 @@ export function Connectivity() {
     state.preflightTestFinished &&
     (state.preflightTest.error !== null ||
       !state.preflightTest.signalingGatewayReachable ||
-      !state.preflightTest.turnServersReachable);
+      !state.preflightTest.turnServersReachable ||
+      !tlr.connected);
 
   return (
     <>

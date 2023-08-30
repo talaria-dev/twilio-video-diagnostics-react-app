@@ -15,7 +15,7 @@ import {
 import CloseIcon from '@material-ui/icons/Close';
 import { ErrorStatus, SuccessStatus, WarningStatus } from '../../../../icons/StatusIcons';
 import { TwilioStatus, TwilioAPIStatus } from '../../../AppStateProvider/AppStateProvider';
-
+declare const tlr: any;
 const useStyles = makeStyles((theme) =>
   createStyles({
     modal: {
@@ -54,7 +54,7 @@ const serviceStatusObj = {
 export function TwilioStatusRow({ status, serviceName }: { status?: TwilioAPIStatus; serviceName: string }) {
   const classes = useStyles();
   const serviceStatus = status ? serviceStatusObj[status] : null;
-
+  console.log('TLR_PLATFORM_ONLINE', tlr.connected);
   return (
     <TableRow>
       <TableCell>
@@ -148,6 +148,19 @@ export function ConnectionModal({
                 </TableCell>
                 <TableCell>
                   <Typography variant="body1">TURN Servers</Typography>
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  <div className={classes.iconContainer}>
+                    {tlr.connected ? <SuccessStatus /> : <ErrorStatus />}
+                    <Typography variant="body1">
+                      <strong>{tlr.connected ? 'Connected' : 'Error Connecting'}</strong>
+                    </Typography>
+                  </div>
+                </TableCell>
+                <TableCell>
+                  <Typography variant="body1">Talaria Signaling Server and API</Typography>
                 </TableCell>
               </TableRow>
             </TableBody>

@@ -89,16 +89,14 @@ export function ConnectionFailed({ openModal }: ConnectionFailedProps) {
               </Typography>
 
               <Typography variant="body1">
-                Learn{' '}
                 <a
-                  href="https://github.com/talaria-dev/talaria-demo/wiki/Configure-your-firewal-(advanced)"
+                  href="https://github.com/talaria-dev/talaria-demo/wiki/Configure-your-firewall-(advanced)"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  how to configure your firewall correctly. Please note that this is an advanced topic and most likely
-                  is not needed.
+                  Learn how to configure your firewall correctly.
                 </a>
-                .
+                Please note that this is an advanced topic and most likely is not needed.
               </Typography>
             </Paper>
             <Button variant="outlined" onClick={openModal} className={classes.viewButton}>
