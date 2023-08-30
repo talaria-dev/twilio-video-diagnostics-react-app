@@ -116,13 +116,13 @@ export function ConnectionModal({
             </TableHead>
             <TableBody>
               <TwilioStatusRow status={serviceStatuses?.['Compositions']} serviceName="Compositions" />
-              <TwilioStatusRow status={serviceStatuses?.['Go Rooms']} serviceName="Go Rooms" />
+
               <TwilioStatusRow status={serviceStatuses?.['Group Rooms']} serviceName="Group Rooms" />
               <TwilioStatusRow
                 status={serviceStatuses?.['Network Traversal Service']}
                 serviceName="Network Traversal"
               />
-              <TwilioStatusRow status={serviceStatuses?.['Peer-to-Peer Rooms']} serviceName="Peer-to-Peer Rooms" />
+
               <TwilioStatusRow status={serviceStatuses?.['Recordings']} serviceName="Recordings" />
               <TableRow>
                 <TableCell>
@@ -134,7 +134,7 @@ export function ConnectionModal({
                   </div>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="body1">Signaling Gateway</Typography>
+                  <Typography variant="body1">Conferencing Signaling Gateway</Typography>
                 </TableCell>
               </TableRow>
               <TableRow>

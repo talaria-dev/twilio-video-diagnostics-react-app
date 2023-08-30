@@ -12,11 +12,11 @@ export default function useTwilioStatus(dispatch: React.Dispatch<ACTIONTYPE>) {
 
         const ALLOWED_COMPONENTS = [
           'Group Rooms',
-          'Peer-to-Peer Rooms',
+          //'Peer-to-Peer Rooms',
           'Compositions',
           'Recordings',
           'Network Traversal Service',
-          'Go Rooms',
+          //'Go Rooms',
         ];
 
         response.data.components.forEach(({ name, status }: { name: keyof TwilioStatus; status: TwilioAPIStatus }) => {
