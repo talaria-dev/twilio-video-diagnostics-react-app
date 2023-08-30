@@ -76,7 +76,7 @@ export default createTheme({
       root: {
         borderRadius: '4px',
         textTransform: 'none',
-        color: 'rgb(40, 42, 43)',
+        color: 'rgb(126, 87, 194)',
         fontSize: '0.9rem',
         fontWeight: 600,
         transition: defaultTheme.transitions.create(['background-color', 'box-shadow', 'border', 'color'], {
@@ -181,7 +181,7 @@ export default createTheme({
   },
   palette: {
     primary: {
-      main: '#0263E0',
+      main: '#7e57c2',
     },
     text: {
       secondary: '#606B85',

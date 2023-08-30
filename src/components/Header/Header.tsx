@@ -114,9 +114,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={classes.mobileLogo}>
-        <TwilioLogo />
-      </div>
+      <div className={classes.mobileLogo}></div>
     </>
   );
 }

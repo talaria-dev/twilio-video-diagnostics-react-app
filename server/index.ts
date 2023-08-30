@@ -16,7 +16,7 @@ const tokenEndpoint = createExpressHandler(tokenFunction);
 const turnCredentialsFunction: ServerlessFunction = require('../serverless/functions/app/turn-credentials').handler;
 const turnCredentialsEndpoint = createExpressHandler(turnCredentialsFunction);
 
-app.all('/app/token', tokenEndpoint);
+app.all('/api/twilio', tokenEndpoint);
 app.all('/app/turn-credentials', turnCredentialsEndpoint);
 
 app.use((req, res, next) => {

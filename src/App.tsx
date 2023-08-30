@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     brandSidebar: {
-      background: '#06033A',
+      background: '#7e57c2',
       position: 'fixed',
       top: 0,
       bottom: 0,
@@ -50,9 +50,7 @@ function App() {
       <div className={classes.appContainer}>
         <Header />
         <MainContent />
-        <div className={classes.brandSidebar}>
-          <Logo />
-        </div>
+        <div className={classes.brandSidebar}></div>
       </div>
     </AppStateProvider>
   );

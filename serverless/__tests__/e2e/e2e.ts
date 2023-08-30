@@ -41,7 +41,7 @@ describe('the serverless endpoints', () => {
 
   describe('the token function', () => {
     it('should return a valid access token', async () => {
-      const { body } = await superagent.get(`${appURL}/app/token`);
+      const { body } = await superagent.get(`../api/twilio`);
       const token = jwt.decode(body.token) as { [key: string]: any };
       expect(token.grants.identity).toEqual(constants.VIDEO_IDENTITY);
     });

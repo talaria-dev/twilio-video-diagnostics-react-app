@@ -341,7 +341,7 @@ export const AppStateProvider: React.FC = ({ children }) => {
         signalingRegion: signalingGateway,
         TURN: turnServers,
       },
-      preflightTestReport: { report: state.preflightTest.report, error: state.preflightTest.error?.message || null },
+      //preflightTestReport: { report: state.preflightTest.report, error: state.preflightTest.error?.message || null },
       videoTestResults: state.videoInputTestReport,
     };
 
@@ -371,7 +371,7 @@ export const AppStateProvider: React.FC = ({ children }) => {
   useEffect(() => {
     navigator.mediaDevices.enumerateDevices().then((devices) => dispatch({ type: 'set-devices', devices }));
 
-    axios('app/token').catch((error: AxiosError) => {
+    axios(window.location.origin + '/api/test-credentials').catch((error: AxiosError) => {
       if (error.response?.data?.error?.message === 'token server expired') {
         dispatch({ type: 'set-app-is-expired' });
       }
