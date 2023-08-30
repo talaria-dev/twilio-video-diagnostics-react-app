@@ -84,13 +84,19 @@ export function ConnectionFailed({ openModal }: ConnectionFailedProps) {
           <Grid item lg={5} className={classes.paperContainer}>
             <Paper className={classes.paper}>
               <Typography variant="body1" gutterBottom>
-                To conduct a video call, your internet needs to be able to communicate with Twilio's cloud.
+                To conduct a video call, your network needs to be able to communicate with Talaria server and Twilio's
+                cloud.
               </Typography>
 
               <Typography variant="body1">
                 Learn{' '}
-                <a href="https://www.twilio.com/docs/video/ip-addresses" target="_blank" rel="noopener noreferrer">
-                  how to configure your firewall correctly
+                <a
+                  href="https://github.com/talaria-dev/talaria-demo/wiki/Configure-your-firewal-(advanced)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  how to configure your firewall correctly. Please note that this is an advanced topic and most likely
+                  is not needed.
                 </a>
                 .
               </Typography>
